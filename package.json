@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "generate":"node files.js"
+  },
   "author": "Kinshu Jain",
   "license": "ISC",
   "dependencies": {
