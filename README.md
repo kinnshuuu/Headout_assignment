@@ -11,6 +11,24 @@ This project provides an optimized solution for the implementation of a simple H
 - Accept two query parameters, `n` for the file name and `m` for the line number.
 - Return content based on specified conditions.
 
+## Optimization
+
+### Efficient File Handling:
+
+Implemented an efficient file handling mechanism to read and return content from files without loading the entire file into memory.
+
+### Concurrency:
+
+Utilized concurrent programming techniques to handle multiple incoming requests concurrently, improving overall server responsiveness.
+
+### Dockerization:
+
+The Dockerfile has been optimized to ensure compatibility with both ARM architecture and x86.
+
+### Paging Optimization:
+
+Implemented a paginated view for file content retrieval, allowing users to specify the page number and page size for more efficient navigation through large datasets.
+
 ## API Endpoints
 
 ### 1. Root Endpoint
@@ -39,6 +57,14 @@ This project provides an optimized solution for the implementation of a simple H
 
 - Dockerfile is optimized for compatibility with both ARM architecture and x86.
 - Docker container exposes port 8080.
+## Note for Users
+
+If you already have a `tmp/data` directory with the necessary files, you may comment out the following line in the Dockerfile:
+
+```dockerfile
+# Comment out the line below if you already have a tmp/data directory
+RUN npm run generate
+```
 
 ## Running with Docker
 
