@@ -1,7 +1,12 @@
 const express = require('express');
 const fs = require('fs/promises');
 const app = express();
-const port = 8080;
+const PORT = process.env.PORT || 8080;
+
+app.get('/', async (req, res) => {
+    // console.log('hello world');
+    return res.status(200).send("Server is running");
+})
 
 app.get('/data', async (req, res) => {
     const n = req.query.n;
@@ -37,6 +42,6 @@ app.get('/data', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server listening at http://localhost:${PORT}`);
 });
